@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Website</title>
+
+<style>
+
+/* Applies basic settings to all elements */
+*{
+    box-sizing:border-box;
+}
+
+/* Styles the whole webpage */
+body{
+    margin:0;
+    font-family:Arial;
+    background:#20243a;
+    color:#222;
+}
+
+/* Styles the top header */
+header{
+    background:linear-gradient(135deg,#6c63ff,#1dbed3);
+    color:white;
+    text-align:center;
+    padding:35px;
+}
+
+/* Styles the main heading */
+header h1{
+    margin:0;
+    font-size:38px;
+}
+
+/* Styles the navigation bar */
+nav{
+    background:#15182a;
+    text-align:center;
+}
+
+/* Styles the navigation links */
+nav a,.dropbtn{
+    color:white;
+    text-decoration:none;
+    display:inline-block;
+    padding:16px 22px;
+}
+
+/* Changes link color when mouse is over it */
+nav a:hover,.dropbtn:hover{
+    background:#6c63ff;
+}
+
+/* Creates the dropdown area */
+.dropdown{
+    display:inline-block;
+    position:relative;
+}
+
+/* Styles the dropdown menu */
+.dropdown-content{
+    display:none;
+    position:absolute;
+    background:white;
+    min-width:140px;
+    text-align:left;
+}
+
+/* Styles links inside the dropdown */
+.dropdown-content a{
+    color:#222;
+    display:block;
+    padding:12px;
+}
+
+/* Changes dropdown link background on hover */
+.dropdown-content a:hover{
+    background:#eee;
+}
+
+/* Shows the dropdown when mouse is over Services */
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+
+/* Styles the main content sections */
+section{
+    background:white;
+    max-width:850px;
+    margin:30px auto;
+    padding:30px;
+    border-radius:12px;
+}
+
+/* Arranges the service cards */
+.cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+/* Styles each service card */
+.card{
+    background:#eee9ff;
+    padding:22px;
+    flex:1;
+    min-width:180px;
+    text-align:center;
+    border-radius:10px;
+}
+
+/* Styles the headings inside cards */
+.card h3{
+    color:#6c63ff;
+}
+
+/* Styles the footer */
+footer{
+    background:#15182a;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Website header -->
+<header id="home">
+    <h1>Time Pass</h1>
+    <p>Feat html and css</p>
+</header>
+
+<!-- Navigation bar -->
+<nav>
+
+    <!-- Home link -->
+    <a href="#home">Home</a>
+
+    <!-- About link -->
+    <a href="#about">About</a>
+
+    <!-- Services dropdown -->
+    <div class="dropdown">
+        <a href="#services" class="dropbtn">Services ▼</a>
+
+        <!-- Dropdown options -->
+        <div class="dropdown-content">
+            <a href="#html">HTML</a>
+            <a href="#css">CSS</a>
+            <a href="#web">Web Design</a>
+        </div>
+    </div>
+
+    <!-- Contact link -->
+    <a href="#contact">Contact</a>
+
+</nav>
+
+<!-- About section -->
+<section id="about">
+    <h2>Time pass</h2>
+    <p> Using html and css</p>
+</section>
+
+<!-- Services section -->
+<section id="services">
+
+    <h2>Services</h2>
+
+    <!-- Container for all service cards -->
+    <div class="cards">
+
+        <!-- HTML card -->
+        <div class="card" id="html">
+            <h3>HTML</h3>
+            <p>Creates the structure of a webpage.</p>
+        </div>
+
+        <!-- CSS card -->
+        <div class="card" id="css">
+            <h3>CSS</h3>
+            <p>Makes a webpage look better.</p>
+        </div>
+
+        <!-- Web Design card -->
+        <div class="card" id="web">
+            <h3>Web Design</h3>
+            <p>Combines HTML and CSS to create websites.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Contact section -->
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email: rohit202006@gmail.com</p>
+</section>
+
+<!-- Website footer -->
+<footer>
+    Time pass
+</footer>
+
+</body>
+</html>
