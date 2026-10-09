@@ -1,233 +1,384 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-<title>Schemeo</title>
+    <title>DAVV Connect</title>
 
-<style>
+    <style>
 
-/* Applies basic settings to all elements */
-*{
-    box-sizing:border-box;
-}
+    /* Applies basic settings to all elements */
+    * {
+        box-sizing: border-box;
+    }
 
-/* Styles the whole webpage */
-body{
-    margin:0;
-    font-family:Arial;
-    background:#20243a;
-    color:#222;
-}
+    /* Main webpage layout using Flexbox */
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #20243a;
+        color: #222;
 
-/* Styles the top header */
-header{
-    background:linear-gradient(135deg,#6c63ff,#1dbed3);
-    color:white;
-    text-align:center;
-    padding:35px;
-}
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
 
-/* Styles the main heading */
-header h1{
-    margin:0;
-    font-size:38px;
-}
+    /* Styles the website header */
+    header {
+        background: linear-gradient(135deg, #6c63ff, #1dbed3);
+        color: white;
+        text-align: center;
+        padding: 35px;
 
-/* Styles the navigation bar */
-nav{
-    background:#15182a;
-    text-align:center;
-}
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
-/* Styles the navigation links */
-nav a,.dropbtn{
-    color:white;
-    text-decoration:none;
-    display:inline-block;
-    padding:16px 22px;
-}
+    header h1 {
+        margin: 0;
+        font-size: 38px;
+    }
 
-/* Changes link color when mouse is over it */
-nav a:hover,.dropbtn:hover{
-    background:#6c63ff;
-}
+    /* Navigation bar using Flexbox */
+    nav {
+        background: #15182a;
 
-/* Creates the dropdown area */
-.dropdown{
-    display:inline-block;
-    position:relative;
-}
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
 
-/* Styles the dropdown menu */
-.dropdown-content{
-    display:none;
-    position:absolute;
-    background:white;
-    min-width:180px;
-    text-align:left;
-}
+    /* Styles navigation links */
+    nav a, .dropbtn {
+        color: white;
+        text-decoration: none;
+        padding: 16px 22px;
+        display: block;
+    }
 
-/* Styles links inside the dropdown */
-.dropdown-content a{
-    color:#222;
-    display:block;
-    padding:12px;
-}
+    /* Hover effect for navigation */
+    nav a:hover, .dropbtn:hover {
+        background: #6c63ff;
+    }
 
-/* Changes dropdown link background on hover */
-.dropdown-content a:hover{
-    background:#eee;
-}
+    /* Dropdown container */
+    .dropdown {
+        position: relative;
+    }
 
-/* Shows the dropdown when mouse is over Services */
-.dropdown:hover .dropdown-content{
-    display:block;
-}
+    /* Dropdown menu */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 200px;
+        background: white;
+        z-index: 10;
+    }
 
-/* Styles the main content sections */
-section{
-    background:white;
-    max-width:850px;
-    margin:30px auto;
-    padding:30px;
-    border-radius:12px;
-}
+    /* Dropdown links */
+    .dropdown-content a {
+        color: #222;
+        padding: 12px;
+    }
 
-/* Arranges the service cards */
-.cards{
-    display:flex;
-    gap:20px;
-    flex-wrap:wrap;
-}
+    .dropdown-content a:hover {
+        background: #eee;
+    }
 
-/* Styles each service card */
-.card{
-    background:#eee9ff;
-    padding:22px;
-    flex:1;
-    min-width:180px;
-    text-align:center;
-    border-radius:10px;
-}
+    /* Displays dropdown on hover */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
 
-/* Styles the headings inside cards */
-.card h3{
-    color:#6c63ff;
-}
+    /* Main content layout using Flexbox */
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        padding: 10px 0;
+    }
 
-/* Styles the footer */
-footer{
-    background:#15182a;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
+    /* Styles all content sections */
+    section {
+        background: white;
+        width: 90%;
+        max-width: 1000px;
+        margin: 20px 0;
+        padding: 30px;
+        border-radius: 12px;
 
-</style>
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Arranges feature cards using Flexbox */
+    .cards {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    /* Individual feature cards */
+    .card {
+        background: #eee9ff;
+        padding: 22px;
+        border-radius: 10px;
+        text-align: center;
+
+        flex: 1 1 220px;
+    }
+
+    /* Feature card headings */
+    .card h3 {
+        color: #6c63ff;
+    }
+
+    /* Community information boxes */
+    .community {
+        background: #e7f8fb;
+        padding: 18px;
+        border-radius: 10px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    /* Styles buttons */
+    .btn {
+        align-self: flex-start;
+        background: #6c63ff;
+        color: white;
+        text-decoration: none;
+        padding: 12px 20px;
+        border-radius: 6px;
+    }
+
+    .btn:hover {
+        background: #5148d8;
+    }
+
+    /* Footer using Flexbox */
+    footer {
+        background: #15182a;
+        color: white;
+        text-align: center;
+        padding: 20px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    footer p {
+        margin: 0;
+    }
+
+    /* Responsive layout for mobile screens */
+    @media (max-width: 600px) {
+
+        header h1 {
+            font-size: 30px;
+        }
+
+        nav a, .dropbtn {
+            padding: 13px 14px;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .cards {
+            flex-direction: column;
+        }
+
+        .card {
+            flex: 1 1 auto;
+        }
+    }
+
+    </style>
 </head>
 
 <body>
 
-<!-- Website header -->
-<header id="home">
-    <h1>Schemeo</h1>
-    <p>Government Benefits. Made Simple.</p>
-</header>
+    <!-- Website header -->
+    <header id="home">
+        <h1>DAVV Connect</h1>
+        <p>Your University. Your People. Your Community.</p>
+    </header>
 
-<!-- Navigation bar -->
-<nav>
+    <!-- Navigation bar -->
+    <nav>
 
-    <!-- Home link -->
-    <a href="#home">Home</a>
+        <!-- Home link -->
+        <a href="#home">Home</a>
 
-    <!-- About link -->
-    <a href="#about">About</a>
+        <!-- About link -->
+        <a href="#about">About</a>
 
-    <!-- Services dropdown -->
-    <div class="dropdown">
-        <a href="#services" class="dropbtn">Features ▼</a>
+        <!-- Features dropdown -->
+        <div class="dropdown">
+            <a href="#features" class="dropbtn">Features ▼</a>
 
-        <!-- Dropdown options -->
-        <div class="dropdown-content">
-            <a href="#discover">Scheme Discovery</a>
-            <a href="#tracking">Application Tracking</a>
-            <a href="#ai">Schemeo AI</a>
+            <!-- Dropdown options -->
+            <div class="dropdown-content">
+                <a href="#notices">University Notices</a>
+                <a href="#communities">Student Communities</a>
+                <a href="#academic">Academic Collaboration</a>
+                <a href="#opportunities">Events & Opportunities</a>
+            </div>
         </div>
-    </div>
 
-    <!-- Contact link -->
-    <a href="#contact">Contact</a>
+        <!-- Contact link -->
+        <a href="#contact">Contact</a>
 
-</nav>
+    </nav>
 
-<!-- About section -->
-<section id="about">
+    <!-- Main content wrapper -->
+    <main>
 
-    <h2>About Schemeo</h2>
+        <!-- About section -->
+        <section id="about">
 
-    <p>
-        Schemeo is a smart platform designed to make government schemes and benefits easier to discover, understand and access. Instead of searching through hundreds of schemes, users can provide basic information about themselves and receive personalised recommendations based on their needs and eligibility.Schemeo helps users understand eligibility, required documents, application steps and progress all through one simple platform.
-    </p>
+            <h2>About DAVV Connect</h2>
 
-</section>
-
-<!-- Services / Features section -->
-<section id="services">
-
-    <h2>Features</h2>
-
-    <!-- Container for all feature cards -->
-    <div class="cards">
-
-        <!-- Scheme Discovery -->
-        <div class="card" id="discover">
-            <h3>Scheme Discovery</h3>
             <p>
-                Find government schemes based on your age, location,
-                occupation, income and personal needs.
+                DAVV Connect is a proposed student-focused platform
+                designed to bring the Devi Ahilya Vishwavidyalaya
+                community together. It combines university updates,
+                college communities, academic collaboration, events
+                and opportunities in one place.
             </p>
-        </div>
 
-        <!-- Application Tracking -->
-        <div class="card" id="tracking">
-            <h3>Application Tracking</h3>
             <p>
-                Track your application from submission and verification
-                to approval and receiving the benefit.
+                Inspired by community platforms like Discord and Slack,
+                DAVV Connect aims to make campus communication simpler.
+                Students can discover important notices, connect with
+                classmates, join discussions and stay informed about
+                university activities without depending on multiple
+                websites and groups.
             </p>
-        </div>
 
-        <!-- AI Assistant -->
-        <div class="card" id="ai">
-            <h3>Schemeo AI</h3>
+            <a href="#features" class="btn">Explore Features</a>
+
+        </section>
+
+        <!-- Features section -->
+        <section id="features">
+
+            <h2>Our Features</h2>
+
+            <!-- Feature cards arranged with Flexbox -->
+            <div class="cards">
+
+                <!-- University notices -->
+                <div class="card" id="notices">
+                    <h3>University Notices</h3>
+                    <p>
+                        Find examination schedules, results, admission
+                        updates, academic calendars and official
+                        circulars in one place.
+                    </p>
+                </div>
+
+                <!-- Student communities -->
+                <div class="card" id="communities">
+                    <h3>Student Communities</h3>
+                    <p>
+                        Join college, department, course and society
+                        communities. Participate in discussions and
+                        connect with other students.
+                    </p>
+                </div>
+
+                <!-- Academic collaboration -->
+                <div class="card" id="academic">
+                    <h3>Academic Collaboration</h3>
+                    <p>
+                        Create study groups, discuss subjects, share
+                        learning resources and work together on projects.
+                    </p>
+                </div>
+
+                <!-- Events and opportunities -->
+                <div class="card" id="opportunities">
+                    <h3>Events & Opportunities</h3>
+                    <p>
+                        Discover college fests, internships, scholarships,
+                        competitions, workshops and society recruitment.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Community section -->
+        <section id="student-community">
+
+            <h2>One University, Many Communities</h2>
+
             <p>
-                Ask questions about schemes, eligibility and documents
-                and receive simple step-by-step guidance.
+                Every student has different interests, courses and goals.
+                DAVV Connect brings these communities together while
+                allowing students to participate in the spaces that
+                matter to them.
             </p>
-        </div>
 
-    </div>
+            <!-- Department community -->
+            <div class="community">
+                <h3>Department Communities</h3>
+                <p>
+                    Connect with classmates, discuss subjects, share
+                    resources and collaborate on academic projects.
+                </p>
+            </div>
 
-</section>
+            <!-- College and society community -->
+            <div class="community">
+                <h3>College & Society Communities</h3>
+                <p>
+                    Discover student clubs, participate in events and
+                    stay connected with campus activities.
+                </p>
+            </div>
 
-<!-- Contact section -->
-<section id="contact">
+        </section>
 
-    <h2>Contact</h2>
+        <!-- Contact section -->
+        <section id="contact">
 
-    <p>
-        Have questions about Schemeo? Get in touch with us.
-    </p>
+            <h2>Contact</h2>
 
-    <p>
-        Email: rohit202006@gmail.com
-    </p>
+            <p>
+                Have suggestions or ideas for DAVV Connect?
+                We'd love to hear from you.
+            </p>
 
-</section>
+            <p>
+                Email: your-email@example.com
+            </p>
 
-<!-- Website footer -->
-<footer>
-    Schemeo • Government Benefits. Made Simple.
-</footer>
+        </section>
+
+    </main>
+
+    <!-- Website footer -->
+    <footer>
+        <p>DAVV Connect • Your University. Your People. Your Community.</p>
+        <p>Independent student project concept</p>
+    </footer>
 
 </body>
 </html>
